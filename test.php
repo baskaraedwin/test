@@ -36,14 +36,11 @@ $profile = json_decode($profile, TRUE);
 
 </form>
 </div>
-
 <br>
 <ul id="myUL">
   <li>mulai</li>
 </ul>
-
 <script>
-// Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("LI");
 var i;
 for (i = 0; i < myNodelist.length; i++) {
@@ -80,10 +77,5 @@ function newElement() {
   }
 }
 </script>
-
-
-
 </body>
 </html>
-
-
