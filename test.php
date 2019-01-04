@@ -1,51 +1,15 @@
 <?php 
-// -------------------- dasar curl----------------
-   /* // persiapkan curl
-    $ch = curl_init(); 
-
-    // set url 
-    curl_setopt($ch, CURLOPT_URL, "test666999.herokuapp.com/all");
-
-    // return the transfer as a string 
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-
-    // $output contains the output string 
-    $output = curl_exec($ch); 
-
-    // tutup curl 
-    curl_close($ch);      
-
-    // menampilkan hasil curl
-    echo $output;
-    */
-// -------------------- dasar curl----------------
-
 function http_request($url){
-    // persiapkan curl
-    $ch = curl_init(); 
-
-    // set url 
-    curl_setopt($ch, CURLOPT_URL, $url);
-    
-    // set user agent    
+        $ch = curl_init(); 
+    curl_setopt($ch, CURLOPT_URL, $url);  
     curl_setopt($ch,CURLOPT_USERAGENT,'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
-
-    // return the transfer as a string 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-
-    // $output contains the output string 
     $output = curl_exec($ch); 
-
-    // tutup curl 
     curl_close($ch);      
-
-    // mengembalikan hasil curl
     return $output;
 }
 
 $profile = http_request("test666999.herokuapp.com/all");
-
-// ubah string JSON menjadi array
 $profile = json_decode($profile, TRUE);
 ?>
 
@@ -56,12 +20,6 @@ $profile = json_decode($profile, TRUE);
 </head>
 
 <body>
-
-<!--<p>
-<?php echo print_r($profile[0]["name"]); ?><br>
-<?php echo print_r($profile[0]["lat"]); ?><br>
-<?php echo print_r($profile[0]["long"]); ?><br><br>
-</p>-->
 <div id="myDIV" class="header" align="center">
 <form id="myInput" name="form1" onsubmit="return false">
   <label for="select1"></label>
